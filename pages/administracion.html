@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto JavaScript</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container-fluid">
+          <i class="fa-solid fa-wallet mx-1"></i>
+          <a class="navbar-brand" href="#">My Wallet</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../pages/home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  active" href="../pages/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+              <li class="nav-item position-absolute end-0 mx-5">
+                <a class="nav-link" href="../index.html"
+                  >Log Out<i class="fas fa-door-open mx-1"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="row m-5">
+        <div class="col-sm-12 col-md-6">
+          <button
+            type="button"
+            class="btn btn-success w-100 py-3 shadow-lg"
+            data-bs-target="#ingresoModal"
+            data-bs-toggle="modal"
+          >
+            <i
+              class="fa-solid fa-right-to-bracket fa-3x d-flex justify-content-center"
+            ></i>
+            Añadir Ingreso
+          </button>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <button
+            type="button"
+            class="btn btn-danger w-100 py-3 shadow-lg"
+            data-bs-target="#egresoModal"
+            data-bs-toggle="modal"
+          >
+            <i
+              class="fa-solid fa-right-from-bracket fa-3x d-flex justify-content-center"
+            ></i>
+            Añadir Egreso
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="text-center text-warning">
+        
+          <h1><i class="fa-regular fa-circle-down"></i>Tu Billetera<i class="fa-regular fa-circle-down"></i></h1>
+          
+      </div>
+
+      <table class="table my-5">
+        <thead class="table-warning">
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </main>
+    <footer></footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="ingresoModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="ingresoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ingresoModalLabel">Añadir Ingreso</h5>
+            <i class="fa-solid fa-right-to-bracket fa-2x text-success mx-1"></i>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row mt-1">
+                <div class="col-12 justify-content-center">
+                  <div class="card">
+                    <div class="card-body">
+                      <form id="formulario">
+                        <label class="fw-bold">Descripcion</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="text_nombre"
+                          required
+                        />
+                        <label class="fw-bold">Monto</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="text_monto"
+                          required
+                        />
+                        <label class="fw-bold">Fecha</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="text_fecha"
+                          required
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-success">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="egresoModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="egresoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="egresoModalLabel">Añadir Egreso</h5>
+            <i
+              class="fa-solid fa-right-from-bracket fa-2x text-danger mx-1"
+            ></i>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row mt-1">
+                <div class="col-12 justify-content-center">
+                  <div class="card">
+                    <div class="card-body">
+                      <form id="formulario">
+                        <label class="fw-bold">Descripcion</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="text_nombre"
+                          required
+                        />
+                        <label class="fw-bold">Monto</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="text_monto"
+                          required
+                        />
+                        <label class="fw-bold">Fecha</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="text_fecha"
+                          required
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-danger">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/580e46aa1a.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

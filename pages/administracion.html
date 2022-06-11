@@ -36,13 +36,14 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link  active" href="../pages/administracion.html"
+                <a class="nav-link active" href="../pages/administracion.html"
                   >Administracion</a
                 >
               </li>
               <li class="nav-item position-absolute end-0 mx-5">
                 <a class="nav-link" href="../index.html"
-                  >Log Out<i class="fas fa-door-open mx-1"></i></a>
+                  >Log Out<i class="fas fa-door-open mx-1"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -80,41 +81,45 @@
       </div>
       <hr />
       <div class="text-center text-warning">
-        
-          <h1><i class="fa-regular fa-circle-down"></i>Tu Billetera<i class="fa-regular fa-circle-down"></i></h1>
-          
+        <h1>
+          <i class="fa-regular fa-circle-down"></i>Tu Billetera<i
+            class="fa-regular fa-circle-down"
+          ></i>
+        </h1>
       </div>
-
-      <table class="table my-5">
-        <thead class="table-warning">
-          <tr>
-            <th scope="col">Fecha</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Monto</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table my-5">
+            <thead class="table-warning">
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody id="table_body"></tbody>
+        </table>
+        </div>
+        <div class="col-md-6">
+          <tbody id="table_body"></tbody>
+        </table>
+        <table class="table my-5">
+          <thead class="table-warning">
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Monto</th>
+            </tr>
+          </thead>
+          <tbody id="table_body1"></tbody>
+        </table>
+        </div>
+      </div>
 
     </main>
     <footer></footer>
 
-    <!-- Modal -->
+    <!-- Modal Ingreso-->
     <div
       class="modal fade"
       id="ingresoModal"
@@ -142,7 +147,7 @@
                 <div class="col-12 justify-content-center">
                   <div class="card">
                     <div class="card-body">
-                      <form id="formulario">
+                      <form id="formulario_ingreso">
                         <label class="fw-bold">Descripcion</label>
                         <input
                           type="text"
@@ -164,6 +169,16 @@
                           id="text_fecha"
                           required
                         />
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                          Añadir
+                        </button>
                       </form>
                     </div>
                   </div>
@@ -171,20 +186,10 @@
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancelar
-            </button>
-            <button type="button" class="btn btn-success">Añadir</button>
-          </div>
         </div>
       </div>
     </div>
-    <!-- Modal -->
+    <!-- Modal Egreso-->
     <div
       class="modal fade"
       id="egresoModal"
@@ -214,28 +219,38 @@
                 <div class="col-12 justify-content-center">
                   <div class="card">
                     <div class="card-body">
-                      <form id="formulario">
+                      <form id="formulario_egreso">
                         <label class="fw-bold">Descripcion</label>
                         <input
                           type="text"
                           class="form-control"
-                          id="text_nombre"
+                          id="text_nombre1"
                           required
                         />
                         <label class="fw-bold">Monto</label>
                         <input
                           type="number"
                           class="form-control"
-                          id="text_monto"
+                          id="text_monto1"
                           required
                         />
                         <label class="fw-bold">Fecha</label>
                         <input
                           type="date"
                           class="form-control"
-                          id="text_fecha"
+                          id="text_fecha1"
                           required
                         />
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cerrar
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                          Añadir
+                        </button>
                       </form>
                     </div>
                   </div>
@@ -243,20 +258,12 @@
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="button" class="btn btn-danger">Añadir</button>
-          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/administracion.js"></script>
     <script
       src="https://kit.fontawesome.com/580e46aa1a.js"
       crossorigin="anonymous"

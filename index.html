@@ -1,50 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="./css/login.css" />
-
-    <title>My Wallet</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto JavaScript</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-12 col-md-4 offset-md-4">
-          <div class="card">
-            <img src="./assets/billetera.png" class="card-img-top" alt="logo" />
-            <div class="card-body">
-              <h5 class="card-title">Iniciar sesión</h5>
-              <form id="formulario">
-                <label class="fw-bold">Correo electrónico</label>
-                <input type="email" class="form-control" id="text_email" />
-                <label class="fw-bold">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="text_password"
-                />
-                <button class="btn btn-primary float-end mt-2">Iniciar</button>
-              </form>
-              <p>
-                Si aún no estás registrado, hacé click
-                <a href="./pages/registro.html">aquí</a>
-              </p>
-            </div>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container-fluid">
+          <img
+            src="../assets/billetera.png"
+            class="card-img-top logo"
+            alt="logo"
+          />
+          <a class="navbar-brand" href="#">My Wallet</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../pages/home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+              <li class="nav-item position-absolute end-0 mx-5">
+                <a class="nav-link" href="../index.html"
+                  >Log Out<i class="fas fa-door-open mx-1"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="row m-5">
+        <div class="col-12 card-title text-center my-5 text-secondary">
+          <h1>#aqui va el balance total</h1>
+          <div>
+            <div id="container_ingreso"></div>
+            <div id="container_egreso"></div>
+            <div id="container_balance"></div>
           </div>
         </div>
       </div>
-    </div>
+      <hr />
+      <section class="text-center">
+        <h2>Ultimas actualizaciones</h2>
+        <div class="text-center text-warning">
+          <h1> 
+            <i class="fa-regular fa-circle-down"></i> Tus Registros <i
+              class="fa-regular fa-circle-down"
+            ></i>
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table my-5">
+              <thead class="table-warning">
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Monto</th>
+                </tr>
+              </thead>
+              <tbody id="table_body"></tbody>
+          </table>
+          </div>
+          <div class="col-md-6">
+            <tbody id="table_body"></tbody>
+          </table>
+          <table class="table my-5">
+            <thead class="table-warning">
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody id="table_body1"></tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/login.js"></script>
+    <footer></footer>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script
+      src="https://kit.fontawesome.com/580e46aa1a.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

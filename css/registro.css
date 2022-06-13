@@ -1,4 +1,11 @@
 body{
   background-image: url(../assets/fondo.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo{
+height: 40%;
+width: 40%;
+padding: 10px;
 }

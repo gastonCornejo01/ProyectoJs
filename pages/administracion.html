@@ -66,10 +66,10 @@
             <i
               class="fa-solid fa-right-to-bracket fa-3x d-flex justify-content-center"
             ></i>
-            Añadir Ingreso
+            Añadir Registro
           </button>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <!-- <div class="col-sm-12 col-md-6">
           <button
             type="button"
             class="btn btn-danger w-100 py-3 shadow-lg"
@@ -82,7 +82,7 @@
             Añadir Egreso
           </button>
         </div>
-      </div>
+      </div> -->
       <hr />
       <div class="text-center text-warning">
         <h1> 
@@ -136,12 +136,12 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="ingresoModalLabel">Añadir Ingreso</h5>
-            <img
+            <h5 class="modal-title" id="ingresoModalLabel">Añadir Registro</h5>
+            <!-- <img
             src="../assets/billetera.png"
             class="card-img-top logo"
             alt="logo"
-          />
+          /> -->
             <button
               type="button"
               class="btn-close"
@@ -177,6 +177,13 @@
                           id="text_fecha"
                           required
                         />
+                        <label class="fw-bold">Tipo</label>
+                        <select id="tipo" class="form-control" required>
+                        <option selected>Elige un tipo</option>
+                        <option value="Ingreso">Ingreso</option>
+                        <option value="Egreso">Egreso</option>
+                        </select>
+                        
                         <button
                           type="button"
                           class="btn btn-secondary"
@@ -198,7 +205,7 @@
       </div>
     </div>
     <!-- Modal Egreso-->
-    <div
+    <!-- <div
       class="modal fade"
       id="egresoModal"
       data-bs-backdrop="static"
@@ -269,7 +276,7 @@
           <div class="modal-footer"></div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Modal Edicion -->
     <div
@@ -291,7 +298,7 @@
             ></button>
           </div>
           <!-- cuerpo del modal de edicion  -->
-          <div class="modal-body">
+          <div class="modal-body1 card-body d-flex justify-content-center">
             <!-- acá va el formulario de edicion  -->
           </div>
         </div>

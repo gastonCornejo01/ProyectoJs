@@ -59,29 +59,57 @@
       <div class="row m-5">
         <div class="col-12 card-title text-center my-5 text-secondary">
           <h1>#aqui va el balance total</h1>
-          <div id="container_balance"></div>
+          <div>
+            <div id="container_ingreso"></div>
+            <div id="container_egreso"></div>
+            <div id="container_balance"></div>
+          </div>
         </div>
       </div>
       <hr />
       <section class="text-center">
         <h2>Ultimas actualizaciones</h2>
-        <li>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-        </li>
+        <div class="text-center text-warning">
+          <h1> 
+            <i class="fa-regular fa-circle-down"></i> Tus Registros <i
+              class="fa-regular fa-circle-down"
+            ></i>
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table my-5">
+              <thead class="table-warning">
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Monto</th>
+                </tr>
+              </thead>
+              <tbody id="table_body"></tbody>
+          </table>
+          </div>
+          <div class="col-md-6">
+            <tbody id="table_body"></tbody>
+          </table>
+          <table class="table my-5">
+            <thead class="table-warning">
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody id="table_body1"></tbody>
+          </table>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer></footer>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
     <script
       src="https://kit.fontawesome.com/580e46aa1a.js"
       crossorigin="anonymous"

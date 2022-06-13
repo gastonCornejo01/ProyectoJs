@@ -9,9 +9,9 @@ class Ingresos {
 
 class Egresos {
   constructor(id1, fecha1, nombre1, monto1) {
-    this.id1 = id1;
-    this.fecha1 = fecha1;
-    this.nombre1 = nombre1;
+    this.id = id1;
+    this.fecha = fecha1;
+    this.nombre = nombre1;
     this.monto1 = monto1;
   }
 }
@@ -20,6 +20,8 @@ let ingresos = JSON.parse(localStorage.getItem("ingresos")) || [];
 let tableBody = document.querySelector("#table_body");
 let egresos = JSON.parse(localStorage.getItem("egresos")) || [];
 let tableBody1 = document.querySelector("#table_body1");
+
+let myModal = new bootstrap.Modal(document.getElementById("myModal"));
 
 function agregarIngresos(e) {
   e.preventDefault();
@@ -59,40 +61,45 @@ function agregarEgresos(e) {
   cargarTabla1();
 }
 
-// const crearCuerpoModal = (index) => {
-//   document.querySelector(".modal-body").innerHTML = "";
+const editModal = function (registroId) {
+  myModal.show();
+  crearCuerpoModal(registroId);
+};
 
-//   let bodyModal = document.querySelector(".modal-body");
-//   let contenidoBody = `<form id=form-update onSubmit="actualizarIngreso(event,${index})">
-//   <label>Fecha<label>
-//   <input id="fecha-update" class="form-control" type="date" value=${Ingresos[index].fecha}" required/>
-//   <label>Descripción<label>
-//   <input id="nombre-update" class="form-control" type="date" value=${ingresos[index].nombre}" required/>
-//   <label>Descripción<label>
-//   <input id="monto-update" class="form-control" type="date" value=${ingresos[index].monto}" required/>
-//   <button class="btn btn-primary mt-3 float-end">Guardar</button>
-//   </form>`;
+const crearCuerpoModal = (index) => {
+  document.querySelector(".modal-body").innerHTML = "";
 
-//   bodyModal.innerHTML = contenidoBody;
-// };
+  let bodyModal = document.querySelector(".modal-body");
+  let contenidoBody = `<form id=form-update onSubmit="actualizarIngreso(event,${index})">
+  <label>Fecha<label>
+  <input id="fecha-update" class="form-control" type="date" value=${ingresos[index].fecha}" required/>
+  <label>Descripción<label>
+  <input id="nombre-update" class="form-control" type="text" value=${ingresos[index].nombre}" required/>
+  <label>Monto<label>
+  <input id="monto-update" class="form-control" type="number" value=${ingresos[index].monto}" required/>
+  <button class="btn btn-primary mt-3 float-end">Guardar</button>
+  </form>`;
 
-// const actualizarIngreso = function (e, index) {
-//   e.preventDefault();
+  bodyModal.innerHTML = contenidoBody;
+};
 
-//   let fecha = document.getElementById("fecha-update").value;
-//   let nombre = document.getElementById("nombre-update").value;
-//   let monto = document.getElementById("monto-update").value;
+const actualizarIngreso = function (e, index) {
+  e.preventDefault();
 
-//   const newData = {
-//     fecha,
-//     nombre,
-//     monto,
-//   };
-//   ingresos.splice(index, 1, newData);
-//   localStorage.setItem("ingresos", JSON.stringify(ingresos));
-//   myModal.hide();
-//   cargarTabla();
-// };
+  let fecha = document.getElementById("fecha-update").value;
+  let nombre = document.getElementById("nombre-update").value;
+  let monto = document.getElementById("monto-update").value;
+
+  const newData = {
+    fecha,
+    nombre,
+    monto,
+  };
+  ingresos.splice(index, 1, newData);
+  localStorage.setItem("ingresos", JSON.stringify(ingresos));
+  myModal.hide();
+  cargarTabla();
+};
 
 const cargarTabla = () => {
   tableBody.innerHTML = "";
@@ -114,15 +121,15 @@ const cargarTabla = () => {
 };
 const cargarTabla1 = () => {
   tableBody.innerHTML = "";
-  egresos.map(function (egreso, index) {
+  egresos.map(function (egreso) {
     let tr1 = document.createElement("tr");
     tr1.classList = "table-danger";
     let celda = `<th scope="row">${egreso.fecha1}</th>
         <td>${egreso.nombre1}</td>
         <td class="d-flex justify-content-between align-items-center">${egreso.monto1}
           <div>
-            <button class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i></button>
-            <button class="btn btn-dark btn-sm"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-primary btn-sm" onclick="editModal(${egreso.id1})" ><i class="fas fa-pencil-alt"></i></button>
+            <button class="btn btn-dark btn-sm" ><i class="fas fa-trash-alt"></i></button>
           </div>
         </td>`;
 

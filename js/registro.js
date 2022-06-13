@@ -16,7 +16,6 @@ const registroUsuario = function (e) {
   let password = document.getElementById("text_password").value;
   let password2 = document.getElementById("text_password2").value;
 
-  //comparar contraseñas
   if (password !== password2) {
     return alert("Las contraseñas no coinciden, intente de nuevo");
   }

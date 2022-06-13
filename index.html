@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/registro.css" />
 
     <title>My Wallet</title>
   </head>
@@ -20,7 +20,11 @@
       <div class="row mt-5">
         <div class="col-12 col-md-4 offset-md-4">
           <div class="card">
-            <img src="./assets/billetera.png" class="card-img-top" alt="logo" />
+            <img
+              src="./assets/billetera.png"
+              class="card-img-top logo"
+              alt="logo"
+            />
             <div class="card-body">
               <h5 class="card-title">Iniciar sesión</h5>
               <form id="formulario">
@@ -32,11 +36,11 @@
                   class="form-control"
                   id="text_password"
                 />
-                <button class="btn btn-primary float-end mt-2">Iniciar</button>
+                <button class="btn btn-warning float-end mt-2">Iniciar</button>
               </form>
               <p>
                 Si aún no estás registrado, hacé click
-                <a href="./pages/registro.html">aquí</a>
+                <a class="text-warning" href="./pages/registro.html">aquí</a>
               </p>
             </div>
           </div>

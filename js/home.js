@@ -25,11 +25,12 @@ const cargarIngreso = () => {
   let TotalIngresos = sumaIngreso;
   let div = document.createElement("div");
   div.classList = "card-body";
-  let contenidoCard = `<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  let contenidoCard = `<div class="card w-100 bg-success text-center text-white" style="width: 18rem;">
+  <div class="justify-content-center">  <img src="../assets/ingreso.png" class=" img" alt="...">
+  </div>
   <div class="card-body">
-    <h5 class="card-title">Total de Ingresos</h5>
-    <h1 class="card-text">${TotalIngresos}</h1>
+    <p class="card-title">Total de Ingresos</p>
+    <p class="card-text">$${TotalIngresos}</p>
    </div>
 </div>`;
   div.innerHTML = contenidoCard;
@@ -41,11 +42,12 @@ const cargarEgreso = () => {
   let TotalEgresos = sumaEgreso;
   let div = document.createElement("div");
   div.classList = "card-body";
-  let contenidoCard = `<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+  let contenidoCard = `<div class="card w-100 bg-danger text-center text-white" style="width: 18rem;">
+  <div class="justify-content-center">  <img src="../assets/egreso.png" class="img" alt="...">
+  </div>
     <div class="card-body">
-      <h5 class="card-title">Total de Egresos</h5>
-      <h1 class="card-text">${TotalEgresos}</h1>
+      <p class="card-title">Total de Egresos</p>
+      <p class="card-text">$${TotalEgresos}</p>
      </div>
   </div>`;
   div.innerHTML = contenidoCard;
@@ -57,11 +59,12 @@ const cargarBalance = () => {
   let TotalBalance = sumaIngreso - sumaEgreso;
   let div = document.createElement("div");
   div.classList = "card-body";
-  let contenidoCard = `<div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+  let contenidoCard = `<div class="card w-100 bg-warning text-center text-white" style="width: 18rem;">
+  <div class="justify-content-center">  <img src="../assets/balance.png" class="img" alt="...">
+  </div>
       <div class="card-body">
-        <h5 class="card-title">Balance Total</h5>
-        <h1 class="card-text">${TotalBalance}</h1>
+        <p class="card-title">Balance Total</p>
+        <p class="card-text">$${TotalBalance}</p>
        </div>
     </div>`;
   div.innerHTML = contenidoCard;
@@ -75,7 +78,7 @@ const cargarTabla = () => {
     tr.classList = "table-success";
     let celda = `<th scope="row">${registro.fecha}</th>
               <td>${registro.nombre}</td>
-              <td class="d-flex justify-content-between align-items-center">${registro.monto}</td>`;
+              <td>$${registro.monto}</td>`;
 
     tr.innerHTML = celda;
     tableBody.appendChild(tr);
@@ -89,7 +92,7 @@ const cargarTabla1 = () => {
     tr1.classList = "table-danger";
     let celda = `<th scope="row">${registro.fecha}</th>
           <td>${registro.nombre}</td>
-          <td class="d-flex justify-content-between align-items-center">${registro.monto}
+          <td>$${registro.monto}
           </td>`;
 
     tr1.innerHTML = celda;

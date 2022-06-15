@@ -6,6 +6,12 @@
 
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/registro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>My Wallet</title>
   </head>
@@ -14,13 +20,11 @@
       <div class="row mt-5">
         <div class="col-12 col-md-4 offset-md-4">
           <div class="card">
-            <img
-              src="../assets/billetera.png"
-              class="card-img-top logo"
-              alt="logo"
-            />
+            <div class="row justify-content-center">
+              <img src="../assets/billetera.png" class="logo" alt="logo" />
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Registro de usuario</h5>
+              <h5 class="card-title mb-5">Registro de usuario</h5>
               <form id="formulario">
                 <label class="fw-bold">Nombre</label>
                 <input
@@ -46,14 +50,14 @@
                 <label class="fw-bold">Repetir contraseña</label>
                 <input
                   type="password"
-                  class="form-control"
+                  class="form-control mb-3"
                   id="text_password2"
                   required
                 />
                 <a class="float-start mt-3 text-warning" href="../index.html"
                   >Volver</a
                 >
-                <button class="btn btn-warning float-end mt-2">
+                <button class="btn btn-warning float-end mt-2 text-white">
                   Registrar
                 </button>
               </form>

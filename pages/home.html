@@ -7,13 +7,20 @@
     <title>Proyecto JavaScript</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <div class="container-fluid">
-          <i class="fa-solid fa-wallet mx-1"></i>
-          <a class="navbar-brand" href="#">My Wallet</a>
+          <img
+            src="../assets/billetera.png"
+            class="card-img-top logo mx-3 my-1"
+            alt="logo"
+          />
+          <a class="navbar-brand" href="../pages/home.html">My Wallet</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -26,213 +33,81 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 ms-3 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../pages/home.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="../pages/administracion.html"
+                  >Administracion</a
+                >
+              </li>
+              <li class="nav-item position-absolute end-0 mx-5">
+                <a class="nav-link" href="../index.html"
+                  >Log Out<i class="fas fa-door-open mx-1"></i
+                ></a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+   <div class="justify-content-center"></div>
+
     <main class="container">
-      <div class="row m-5">
-        <div class="col-sm-12 col-md-6">
-          <button
-            type="button"
-            class="btn btn-success w-100 py-3 shadow-lg"
-            data-bs-target="#ingresoModal"
-            data-bs-toggle="modal"
-          >
-            <i
-              class="fa-solid fa-right-to-bracket fa-3x d-flex justify-content-center"
-            ></i>
-            Añadir Ingreso
-          </button>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <button
-            type="button"
-            class="btn btn-danger w-100 py-3 shadow-lg"
-            data-bs-target="#egresoModal"
-            data-bs-toggle="modal"
-          >
-            <i
-              class="fa-solid fa-right-from-bracket fa-3x d-flex justify-content-center"
-            ></i>
-            Añadir Egreso
-          </button>
-        </div>
-        <div class="col-12 card-title text-center my-5 text-secondary">
-          <h1>#aqui va el balance total</h1>
-        </div>
+      <div class="row my-5 justify-content-center">
+            <div class="row col-md-6 col-sm-12 tamaño-card" id="container_ingreso"></div>
+            <div class="row col-md-6 col-sm-12 tamaño-card" id="container_egreso"></div>
+            <div class="row col-md-12 col-sm-12 card-balance tamaño-card" id="container_balance"></div>
       </div>
       <hr />
       <section class="text-center">
-        <h2>Ultimas actualizaciones</h2>
-        <div class="container">
-          <div class="row mt-5">
-            <div class="col">
-              <h3>Conoce nuestros cursos</h3>
-              <hr />
-            </div>
+        <div class="text-center text-warning">
+          <h1> 
+            <i class="fa-regular fa-circle-down"></i> Ultimas actualizaciones <i
+              class="fa-regular fa-circle-down"
+            ></i>
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table my-5">
+              <thead class="table-warning">
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Monto</th>
+                </tr>
+              </thead>
+              <tbody id="table_body"></tbody>
+          </table>
           </div>
-          <div id="tarjetas_container" class="row mt-5">
-            <p>Aquí van las tarjetas</p>
+          <div class="col-md-6">
+            <tbody id="table_body"></tbody>
+          </table>
+          <table class="table my-5">
+            <thead class="table-warning">
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody id="table_body1"></tbody>
+          </table>
           </div>
         </div>
-      </main>
-
       </section>
     </main>
-    <footer></footer>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="ingresoModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="ingresoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ingresoModalLabel">Añadir Ingreso</h5>
-            <i class="fa-solid fa-right-to-bracket fa-2x text-success mx-1"></i>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="row mt-1">
-                <div class="col-12 justify-content-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <form id="formulario">
-                        <label class="fw-bold">Descripcion</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="text_nombre"
-                          required
-                        />
-                        <label class="fw-bold">Monto</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="text_monto"
-                          required
-                        />
-                        <label class="fw-bold">Fecha</label>
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="text_fecha"
-                          required
-                        />
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancelar
-            </button>
-            <button type="button" class="btn btn-success">Añadir</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="egresoModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="egresoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="egresoModalLabel">Añadir Egreso</h5>
-            <i
-              class="fa-solid fa-right-from-bracket fa-2x text-danger mx-1"
-            ></i>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="row mt-1">
-                <div class="col-12 justify-content-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <form id="formulario">
-                        <label class="fw-bold">Descripcion</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="text_nombre"
-                          required
-                        />
-                        <label class="fw-bold">Monto</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="text_monto"
-                          required
-                        />
-                        <label class="fw-bold">Fecha</label>
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="text_fecha"
-                          required
-                        />
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="button" class="btn btn-danger">Añadir</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <footer></footer>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
     <script
       src="https://kit.fontawesome.com/580e46aa1a.js"
       crossorigin="anonymous"

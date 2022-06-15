@@ -7,6 +7,9 @@
     <title>Proyecto JavaScript</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="sticky-top">
@@ -14,10 +17,10 @@
         <div class="container-fluid">
           <img
             src="../assets/billetera.png"
-            class="card-img-top logo"
+            class="card-img-top logo mx-3 my-1"
             alt="logo"
           />
-          <a class="navbar-brand" href="#">My Wallet</a>
+          <a class="navbar-brand" href="../pages/home.html">My Wallet</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -30,7 +33,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 ms-3 mb-lg-0">
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -55,8 +58,8 @@
       </nav>
     </header>
     <main class="container">
-      <div class="row m-5">
-        <div class="col-sm-12 col-md-6">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 card-balance my-5">
           <button
             type="button"
             class="btn btn-success w-100 py-3 shadow-lg my-2"
@@ -69,20 +72,6 @@
             Añadir Registro
           </button>
         </div>
-        <!-- <div class="col-sm-12 col-md-6">
-          <button
-            type="button"
-            class="btn btn-danger w-100 py-3 shadow-lg"
-            data-bs-target="#egresoModal"
-            data-bs-toggle="modal"
-          >
-            <i
-              class="fa-solid fa-right-from-bracket fa-3x d-flex justify-content-center"
-            ></i>
-            Añadir Egreso
-          </button>
-        </div>
-      </div> -->
       <hr />
       <div class="text-center text-warning">
         <h1> 
@@ -92,27 +81,27 @@
         </h1>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           <table class="table my-5">
             <thead class="table-warning">
               <tr>
-                <th scope="col">Fecha</th>
+                <th class="fecha-responsive" scope="col">Fecha</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Monto</th>
+                <th></th>
               </tr>
             </thead>
             <tbody id="table_body"></tbody>
         </table>
         </div>
-        <div class="col-md-6">
-          <tbody id="table_body"></tbody>
-        </table>
+        <div class="col-lg-6 col-md-12 col-sm-12">
         <table class="table my-5">
           <thead class="table-warning">
             <tr>
               <th scope="col">Fecha</th>
               <th scope="col">Descripcion</th>
               <th scope="col">Monto</th>
+              <th></th>
             </tr>
           </thead>
           <tbody id="table_body1"></tbody>
@@ -204,79 +193,7 @@
         </div>
       </div>
     </div>
-    <!-- Modal Egreso-->
-    <!-- <div
-      class="modal fade"
-      id="egresoModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="egresoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="egresoModalLabel">Añadir Egreso</h5>
-            <i
-              class="fa-solid fa-right-from-bracket fa-2x text-danger mx-1"
-            ></i>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="row mt-1">
-                <div class="col-12 justify-content-center">
-                  <div class="card">
-                    <div class="card-body">
-                      <form id="formulario_egreso">
-                        <label class="fw-bold">Descripcion</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="text_nombre1"
-                          required
-                        />
-                        <label class="fw-bold">Monto</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="text_monto1"
-                          required
-                        />
-                        <label class="fw-bold">Fecha</label>
-                        <input
-                          type="date"
-                          class="form-control"
-                          id="text_fecha1"
-                          required
-                        />
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Cerrar
-                        </button>
-                        <button type="submit" class="btn btn-danger">
-                          Añadir
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer"></div>
-        </div>
-      </div>
-    </div> -->
+
 
     <!-- Modal Edicion -->
     <div

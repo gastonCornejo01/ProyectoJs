@@ -60,42 +60,42 @@ const crearCuerpoModal = (index) => {
 
   let bodyModal = document.querySelector(".modal-body1");
   let contenidoBody = `<form id="form-update" onSubmit="actualizarIngreso(event,${index})">
-    <label class="fw-bold">Descripcion</label>
-    <input
-      type="text"
-      value="${registrosIngreso[index].nombre}"
-      class="form-control"
-      id="nombre-update"
-      required
-    />
-    <label class="fw-bold">Monto</label>
-    <input
-      type="number"
-      value="${registrosIngreso[index].monto}"
-      class="form-control"
-      id="monto-update"
-      required
-    />
-    <label class="fw-bold">Fecha</label>
-    <input
-      type="date"
-      class="form-control"
-      value="${registrosIngreso[index].fecha}"
-      id="fecha-update"
-      required
-    />
-     
-    <button
-      type="button"
-      class="btn btn-secondary"
-      data-bs-dismiss="modal"
-    >
-      Cancelar
-    </button>
-    <button type="submit" class="btn btn-success float-end">
-      Actualizar
-    </button>
-  </form>`;
+  <label class="fw-bold">Descripcion</label>
+  <input
+    type="text"
+    value="${registrosIngreso[index].nombre}"
+    class="form-control"
+    id="nombre-update"
+    required
+  />
+  <label class="fw-bold">Monto</label>
+  <input
+    type="number"
+    value="$${registrosIngreso[index].monto}"
+    class="form-control"
+    id="monto-update"
+    required
+  />
+  <label class="fw-bold">Fecha</label>
+  <input
+    type="date"
+    class="form-control"
+    value="${registrosIngreso[index].fecha}"
+    id="fecha-update"
+    required
+  />
+   
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-bs-dismiss="modal"
+  >
+    Cancelar
+  </button>
+  <button type="submit" class="btn btn-success float-end">
+    Actualizar
+  </button>
+</form>`;
 
   bodyModal.innerHTML = contenidoBody;
 };
@@ -105,42 +105,42 @@ const crearCuerpoModal1 = (index) => {
 
   let bodyModal1 = document.querySelector(".modal-body1");
   let contenidoBody1 = `<form id="form-update" onSubmit="actualizarEgreso(event,${index})">
-    <label class="fw-bold">Descripcion</label>
-    <input
-      type="text"
-      value="${registrosEgreso[index].nombre}"
-      class="form-control"
-      id="nombre-update"
-      required
-    />
-    <label class="fw-bold">Monto</label>
-    <input
-      type="number"
-      value="${registrosEgreso[index].monto}"
-      class="form-control"
-      id="monto-update"
-      required
-    />
-    <label class="fw-bold">Fecha</label>
-    <input
-      type="date"
-      class="form-control"
-      value="${registrosEgreso[index].fecha}"
-      id="fecha-update"
-      required
-    />
-     
-    <button
-      type="button"
-      class="btn btn-secondary"
-      data-bs-dismiss="modal"
-    >
-      Cancelar
-    </button>
-    <button type="submit" class="btn btn-success float-end">
-      Actualizar
-    </button>
-  </form>`;
+  <label class="fw-bold">Descripcion</label>
+  <input
+    type="text"
+    value="${registrosEgreso[index].nombre}"
+    class="form-control"
+    id="nombre-update"
+    required
+  />
+  <label class="fw-bold">Monto</label>
+  <input
+    type="number"
+    value="$${registrosEgreso[index].monto}"
+    class="form-control"
+    id="monto-update"
+    required
+  />
+  <label class="fw-bold">Fecha</label>
+  <input
+    type="date"
+    class="form-control"
+    value="${registrosEgreso[index].fecha}"
+    id="fecha-update"
+    required
+  />
+   
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-bs-dismiss="modal"
+  >
+    Cancelar
+  </button>
+  <button type="submit" class="btn btn-success float-end">
+    Actualizar
+  </button>
+</form>`;
 
   bodyModal1.innerHTML = contenidoBody1;
 };
@@ -221,14 +221,16 @@ const cargarTabla = () => {
     let tr = document.createElement("tr");
     tr.classList = "table-success";
     let celda = `<th scope="row">${registro.fecha}</th>
-              <td>${registro.nombre}</td>
-              <td class="d-flex justify-content-between align-items-center">${registro.monto}
-                <div>
-                  <button class="btn btn-primary btn-sm" onclick="editModal(${index})"><i class="fas fa-pencil-alt"></i></button>
-                  <button class="btn btn-dark btn-sm" onClick="borrarIngreso(${index})"
-                  ><i class="fas fa-trash-alt"></i></button>
-                </div>
-              </td>`;
+            <td class="tabla-responsive1">${registro.nombre}</td>
+            <td>$${registro.monto}</td>
+            <td><div class="tabla-responsive">
+            <button class="btn btn-primary btn-sm" onclick="editModal(${index})"><i class="fas fa-pencil-alt"></i></button>
+            <button class="btn btn-dark btn-sm" onClick="borrarIngreso(${index})"
+            ><i class="fas fa-trash-alt"></i></button>
+          </div>
+            </td>
+              
+            `;
 
     tr.innerHTML = celda;
     tableBody.appendChild(tr);
@@ -240,14 +242,16 @@ const cargarTabla1 = () => {
   registrosEgreso.map(function (registro, index) {
     let tr1 = document.createElement("tr");
     tr1.classList = "table-danger";
-    let celda = `<th scope="row">${registro.fecha}</th>
-          <td>${registro.nombre}</td>
-          <td class="d-flex justify-content-between align-items-center">${registro.monto}
-            <div>
-              <button class="btn btn-primary btn-sm" onclick="editModal1(${index})" ><i class="fas fa-pencil-alt"></i></button>
-              <button class="btn btn-dark btn-sm"  onClick="borrarEgreso(${index})" ><i class="fas fa-trash-alt"></i></button>
-            </div>
-          </td>`;
+    let celda = `<th class="tabla-responsive1" scope="row">${registro.fecha}</th>
+        <td >${registro.nombre}</td>
+        <td>$${registro.monto}</td>
+        <td> <div class="tabla-responsive">
+        <button class="btn btn-primary btn-sm" onclick="editModal1(${index})" ><i class="fas fa-pencil-alt"></i></button>
+        <button class="btn btn-dark btn-sm"  onClick="borrarEgreso(${index})" ><i class="fas fa-trash-alt"></i></button>
+      </div>
+</td>
+         
+        `;
 
     tr1.innerHTML = celda;
     tableBody1.appendChild(tr1);
